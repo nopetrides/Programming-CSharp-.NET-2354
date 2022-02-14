@@ -10,18 +10,34 @@ namespace Week5FutureValue
 			InitializeComponent();
 		}
 
-		private void btnCalculate_Click(object sender, EventArgs e)
+		/// <summary>
+		/// Called when the user activates the calculate button.
+		/// The calculate button can activate if the user clicks it with a mouse,
+		/// or if the user selects it with the tab index and presses enter
+		/// or if the user uses the access key to select the button with its hotkey
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void OnCalculateButtonPressed(object sender, EventArgs e)
         {
 			if (CheckUserEnteredValidData(out decimal monthlyInvestment, out decimal yearlyInterestRate, out int years))
-            {
+			{
 				SetFutureValueDisplay(CalculateFutureValue(monthlyInvestment, years, yearlyInterestRate));
 			}
-        }
+		}
 
+		/// <summary>
+		/// Validates data and spits out the parsed values
+		/// </summary>
+		/// <param name="monthlyInvestment"></param>
+		/// <param name="yearlyInterestRate"></param>
+		/// <param name="years"></param>
+		/// <returns></returns>
 		private bool CheckUserEnteredValidData(out decimal monthlyInvestment, out decimal yearlyInterestRate, out int years)
         {
 			bool dataValid = true;
 			// get the user input
+
 			if (!Validator.TryParseDecimal(txtMonthlyInvestment.Text, "Monthly Investment", out monthlyInvestment))
 			{
 				txtMonthlyInvestment.Clear();
@@ -67,25 +83,31 @@ namespace Week5FutureValue
 			return futureValue;
 		}
 
-		private void btnExit_Click(object sender, EventArgs e)
-		{
-			Close();
-		}
-
 		/// <summary>
-		/// When starting a new data entry, clear the last result
+		/// Called when the user activates the Exit button on the form
+		/// The Exit button can activate if the user clicks it with a mouse,
+		/// or if the user selects it with the tab index and presses enter
+		/// or if the user uses the access key to select the button with its hotkey
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void ClearResult(object sender, EventArgs e)
-		{
-			txtFutureValue.Text = "";
-		}
+		private void OnExitButtonPressed(object sender, EventArgs e)
+        {
+			Close();
+        }
 
+		/// <summary>
+		/// Sets the form values with calculated values
+		/// Switches Control to the txtMonthlyInvestment
+		/// </summary>
+		/// <param name="futureValue"></param>
 		private void SetFutureValueDisplay(decimal futureValue)
         {
 			txtFutureValue.Text = futureValue.ToString("c");
-			txtMonthlyInvestment.Focus();
+			if (btnExit.CanFocus)
+            {
+				btnExit.Focus();
+			}
         }
-	}
+    }
 }

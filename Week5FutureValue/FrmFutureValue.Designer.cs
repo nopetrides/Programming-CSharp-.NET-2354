@@ -30,7 +30,7 @@ namespace Week5FutureValue
 		private void InitializeComponent()
 		{
             this.lblMonthlyInvestment = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.yearlyInterestRateLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMonthlyInvestment = new System.Windows.Forms.TextBox();
@@ -48,16 +48,16 @@ namespace Week5FutureValue
             this.lblMonthlyInvestment.Name = "lblMonthlyInvestment";
             this.lblMonthlyInvestment.Size = new System.Drawing.Size(107, 15);
             this.lblMonthlyInvestment.TabIndex = 0;
-            this.lblMonthlyInvestment.Text = "&Montly Investment";
+            this.lblMonthlyInvestment.Text = "&Monthly Investment";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 65);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "&Yealy Interest Rate";
+            this.yearlyInterestRateLabel.AutoSize = true;
+            this.yearlyInterestRateLabel.Location = new System.Drawing.Point(12, 65);
+            this.yearlyInterestRateLabel.Name = "yearlyInterestRateLabel";
+            this.yearlyInterestRateLabel.Size = new System.Drawing.Size(102, 15);
+            this.yearlyInterestRateLabel.TabIndex = 2;
+            this.yearlyInterestRateLabel.Text = "&Yearly Interest Rate";
             // 
             // label3
             // 
@@ -83,7 +83,6 @@ namespace Week5FutureValue
             this.txtMonthlyInvestment.Name = "txtMonthlyInvestment";
             this.txtMonthlyInvestment.Size = new System.Drawing.Size(100, 23);
             this.txtMonthlyInvestment.TabIndex = 1;
-            this.txtMonthlyInvestment.TextChanged += new System.EventHandler(this.ClearResult);
             // 
             // txtYearlyInterestRate
             // 
@@ -116,7 +115,7 @@ namespace Week5FutureValue
             this.btnCalculate.TabIndex = 8;
             this.btnCalculate.Text = "&Calculate";
             this.btnCalculate.UseVisualStyleBackColor = true;
-            this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
+            this.btnCalculate.Click += new System.EventHandler(this.OnCalculateButtonPressed);
             // 
             // btnExit
             // 
@@ -126,7 +125,7 @@ namespace Week5FutureValue
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnExit.Click += new System.EventHandler(this.OnExitButtonPressed);
             // 
             // FrmFutureValue
             // 
@@ -143,7 +142,7 @@ namespace Week5FutureValue
             this.Controls.Add(this.txtMonthlyInvestment);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.yearlyInterestRateLabel);
             this.Controls.Add(this.lblMonthlyInvestment);
             this.Name = "FrmFutureValue";
             this.Text = "Future Value";
@@ -155,7 +154,7 @@ namespace Week5FutureValue
 		#endregion
 
 		private System.Windows.Forms.Label lblMonthlyInvestment;
-		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label yearlyInterestRateLabel;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.TextBox txtMonthlyInvestment;

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nopet\\Documents\\Lambton\\Programming C# .NET 2354\\Programming-CSharp-.NET-2354\\Week5FutureValue\\Week5FutureValue.csproj": {}
+    "D:\\Programming\\2354-Csharp\\Programming-CSharp-.NET-2354\\Week5FutureValue\\Week5FutureValue.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nopet\\Documents\\Lambton\\Programming C# .NET 2354\\Programming-CSharp-.NET-2354\\Week5FutureValue\\Week5FutureValue.csproj": {
+    "D:\\Programming\\2354-Csharp\\Programming-CSharp-.NET-2354\\Week5FutureValue\\Week5FutureValue.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nopet\\Documents\\Lambton\\Programming C# .NET 2354\\Programming-CSharp-.NET-2354\\Week5FutureValue\\Week5FutureValue.csproj",
+        "projectUniqueName": "D:\\Programming\\2354-Csharp\\Programming-CSharp-.NET-2354\\Week5FutureValue\\Week5FutureValue.csproj",
         "projectName": "Week5FutureValue",
-        "projectPath": "C:\\Users\\nopet\\Documents\\Lambton\\Programming C# .NET 2354\\Programming-CSharp-.NET-2354\\Week5FutureValue\\Week5FutureValue.csproj",
+        "projectPath": "D:\\Programming\\2354-Csharp\\Programming-CSharp-.NET-2354\\Week5FutureValue\\Week5FutureValue.csproj",
         "packagesPath": "C:\\Users\\nopet\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nopet\\Documents\\Lambton\\Programming C# .NET 2354\\Programming-CSharp-.NET-2354\\Week5FutureValue\\obj\\",
+        "outputPath": "D:\\Programming\\2354-Csharp\\Programming-CSharp-.NET-2354\\Week5FutureValue\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nopet\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -75,7 +75,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
