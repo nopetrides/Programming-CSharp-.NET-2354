@@ -1,0 +1,16 @@
+C:\Users\nopet\source\repos\Week5FutureValue\bin\Debug\netcoreapp3.1\Week5FutureValue.exe
+C:\Users\nopet\source\repos\Week5FutureValue\bin\Debug\netcoreapp3.1\Week5FutureValue.deps.json
+C:\Users\nopet\source\repos\Week5FutureValue\bin\Debug\netcoreapp3.1\Week5FutureValue.runtimeconfig.json
+C:\Users\nopet\source\repos\Week5FutureValue\bin\Debug\netcoreapp3.1\Week5FutureValue.runtimeconfig.dev.json
+C:\Users\nopet\source\repos\Week5FutureValue\bin\Debug\netcoreapp3.1\Week5FutureValue.dll
+C:\Users\nopet\source\repos\Week5FutureValue\bin\Debug\netcoreapp3.1\Week5FutureValue.pdb
+C:\Users\nopet\source\repos\Week5FutureValue\obj\Debug\netcoreapp3.1\Week5FutureValue.FrmFutureValue.resources
+C:\Users\nopet\source\repos\Week5FutureValue\obj\Debug\netcoreapp3.1\Week5FutureValue.csproj.GenerateResource.cache
+C:\Users\nopet\source\repos\Week5FutureValue\obj\Debug\netcoreapp3.1\Week5FutureValue.AssemblyInfoInputs.cache
+C:\Users\nopet\source\repos\Week5FutureValue\obj\Debug\netcoreapp3.1\Week5FutureValue.AssemblyInfo.cs
+C:\Users\nopet\source\repos\Week5FutureValue\obj\Debug\netcoreapp3.1\Week5FutureValue.csproj.CoreCompileInputs.cache
+C:\Users\nopet\source\repos\Week5FutureValue\obj\Debug\netcoreapp3.1\Week5FutureValue.dll
+C:\Users\nopet\source\repos\Week5FutureValue\obj\Debug\netcoreapp3.1\Week5FutureValue.pdb
+C:\Users\nopet\source\repos\Week5FutureValue\obj\Debug\netcoreapp3.1\Week5FutureValue.genruntimeconfig.cache
+C:\Users\nopet\source\repos\Week5FutureValue\obj\Debug\netcoreapp3.1\Week5FutureValue.csproj.AssemblyReference.cache
+C:\Users\nopet\source\repos\Week5FutureValue\obj\Debug\netcoreapp3.1\Week5FutureValue.GeneratedMSBuildEditorConfig.editorconfig

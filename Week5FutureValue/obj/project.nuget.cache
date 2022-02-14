@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "ill9+20PLjEnbCfo7fcbQ0aPYUnT3mmr42F641E0MMkntRWHOlMMvAa2bVbjyBWHbJSg/sKFbFh51w3z5hnuTA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nopet\\Documents\\Lambton\\Programming C# .NET 2354\\Programming-CSharp-.NET-2354\\Week5FutureValue\\Week5FutureValue.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nopet\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.22\\microsoft.netcore.app.host.win-x64.3.1.22.nupkg.sha512",
+    "C:\\Users\\nopet\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\nopet\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\nopet\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
