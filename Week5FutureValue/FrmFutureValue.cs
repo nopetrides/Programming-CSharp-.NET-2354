@@ -5,9 +5,24 @@ namespace Week5FutureValue
 {
 	public partial class FrmFutureValue : Form
 	{
-		public FrmFutureValue()
+
+		private bool groupInvesting;
+
+		public enum InterestType
+        {
+			None = 0,
+			Fixed = 'F',
+			Compound = 'T'
+        }
+
+        public FrmFutureValue()
 		{
 			InitializeComponent();
+		}
+
+		private void FrmFutureValue_Load(object sender, EventArgs e)
+		{
+			ChangeVisibilityOfNumberInvesting();
 		}
 
 		/// <summary>
@@ -20,9 +35,9 @@ namespace Week5FutureValue
 		/// <param name="e"></param>
 		private void OnCalculateButtonPressed(object sender, EventArgs e)
         {
-			if (CheckUserEnteredValidData(out decimal monthlyInvestment, out decimal yearlyInterestRate, out int years))
+			if (CheckUserEnteredValidData(out decimal monthlyInvestment, out decimal interestRate, out int years, out int peopleInvesting, out InterestType interestType))
 			{
-				SetFutureValueDisplay(CalculateFutureValue(monthlyInvestment, years, yearlyInterestRate));
+				SetFutureValueDisplay(CalculateFutureValue(monthlyInvestment, interestRate, years, peopleInvesting, interestType));
 			}
 		}
 
@@ -30,10 +45,15 @@ namespace Week5FutureValue
 		/// Validates data and spits out the parsed values
 		/// </summary>
 		/// <param name="monthlyInvestment"></param>
-		/// <param name="yearlyInterestRate"></param>
+		/// <param name="interestRate"></param>
 		/// <param name="years"></param>
 		/// <returns></returns>
-		private bool CheckUserEnteredValidData(out decimal monthlyInvestment, out decimal yearlyInterestRate, out int years)
+		private bool CheckUserEnteredValidData(
+			out decimal monthlyInvestment, 
+			out decimal interestRate, 
+			out int years, 
+			out int peopleInvesting,
+			out InterestType interestType)
         {
 			bool dataValid = true;
 			// get the user input
@@ -44,15 +64,31 @@ namespace Week5FutureValue
 				dataValid = false;
 			}
 
-			if (!Validator.TryParseDecimal(txtYearlyInterestRate.Text, "Yearly Interest Rate", out yearlyInterestRate))
+			if (!Validator.TryParseDecimal(txtInterestRate.Text, "Yearly Interest Rate", out interestRate))
 			{
-				txtYearlyInterestRate.Clear();
+				txtInterestRate.Clear();
 				dataValid = false;
 			}
 			
-			if (!Validator.TryParseInt(txtNumberOfYears.Text, "Number of Years to Invest", out years))
+			if (!Validator.ValidateYearsToInvest(txtNumberOfYears.Text, "Number of Years to Invest", out years))
             {
 				txtNumberOfYears.Clear();
+				dataValid = false;
+            }
+
+			if (!groupInvesting)
+            {
+				peopleInvesting = 1;
+            }
+			else if (!Validator.TryParseInt(txtNumberInvesting.Text, "Number Investing", out peopleInvesting))
+			{
+				txtNumberInvesting.Clear();
+				dataValid = false;
+			}
+
+			if (!Validator.TryParseInterestType(txtInterestType.Text, "Interest Type", out interestType))
+			{
+				txtInterestType.Clear();
 				dataValid = false;
             }
 
@@ -67,16 +103,17 @@ namespace Week5FutureValue
         /// <param name="months"></param>
         /// <param name="monthlyInterestRate"></param>
         /// <returns></returns>
-        private static decimal CalculateFutureValue(decimal monthlyInvestment, int years, decimal yearlyInterestRate)
+        private static decimal CalculateFutureValue(decimal monthlyInvestment, decimal interestRate, int years, int peopleInvesting, InterestType interestType)
 		{
 			int months = years * 12;
-			decimal monthlyInterestRate = yearlyInterestRate / 12 / 100;
+			decimal monthlyInterestRate = interestRate / 12 / 100;
 			decimal futureValue = 0m;
 
 			// calculates future value month by month up to the total number of years.
+			// TODO: calculation differs based on interestType
 			for (int i = 0; i < months; i++)
 			{
-				futureValue = (futureValue + monthlyInvestment)
+				futureValue = (futureValue + monthlyInvestment * peopleInvesting)
 					* (1 + monthlyInterestRate);
 			}
 
@@ -109,5 +146,18 @@ namespace Week5FutureValue
 				btnExit.Focus();
 			}
         }
+
+        private void OnGroupInvestmentCheckBoxChanged(object sender, EventArgs e)
+        {
+			ChangeVisibilityOfNumberInvesting();
+		}
+
+		private void ChangeVisibilityOfNumberInvesting()
+        {
+			groupInvesting = GroupInvestmentCheckBox.Checked;
+			lblNumberInvesting.Visible = groupInvesting;
+			txtNumberInvesting.Visible = groupInvesting;
+		}
+
     }
 }
