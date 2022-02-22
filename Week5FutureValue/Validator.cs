@@ -21,7 +21,7 @@ namespace Week5FutureValue
             bool parseSuccess = decimal.TryParse(stringToParse, out parsedDecimal);
             if (!parseSuccess)
             {
-                ShowParseError(stringToParse, fieldName, "decimal");
+                ErrorHandler.ThrowParseError(stringToParse, fieldName, "decimal");
             }
             return parseSuccess;
         }
@@ -39,7 +39,7 @@ namespace Week5FutureValue
             bool parseSuccess = int.TryParse(stringToParse, out parsedInt);
             if (!parseSuccess)
             {
-                ShowParseError(stringToParse, fieldName, "int");
+                ErrorHandler.ThrowParseError(stringToParse, fieldName, "int");
             }
             return parseSuccess;
         }
@@ -63,37 +63,10 @@ namespace Week5FutureValue
             {
                 if (parsedInt > int.MaxValue / 12)
                 {
-                    MessageBox.Show("The number is too big! Please choose a smaller timescale.",
-                    "Number unsupported",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                    parseSuccess = false;
+                    ErrorHandler.ThrowErrorMessage("The number is too big!Please choose a smaller timescale.");
                 }
             }
             return parseSuccess;
-        }
-
-        /// <summary>
-        /// Generic Error window that takes in arguements about what failed to parse
-        /// </summary>
-        /// <param name="stringToParse"></param>
-        /// <param name="fieldName"></param>
-        /// <param name="parseType"></param>
-        private static void ShowParseError(string stringToParse, string fieldName, string parseType)
-        {
-            string errorString;
-            if (string.IsNullOrEmpty(stringToParse))
-            {
-                errorString = $"Please enter a value in the text box {fieldName}";
-            }
-            else
-            {
-                errorString = $"Could not parse into {parseType}: \"{stringToParse}\"";
-            }
-            MessageBox.Show(errorString,
-                "You are a big dumb.",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
         }
 
         /// <summary>
@@ -109,12 +82,12 @@ namespace Week5FutureValue
             bool parseSuccess = false;
             if (string.IsNullOrEmpty(stringToParse))
             {
-                ShowParseError(stringToParse, fieldName, "FrmFutureValue.InterestType");
+                ErrorHandler.ThrowParseError(stringToParse, fieldName, "FrmFutureValue.InterestType");
                 interestType = FrmFutureValue.InterestType.None;
             }
             else if (stringToParse.Length > 1)
-            { 
-                ShowParseError(stringToParse, fieldName, "FrmFutureValue.InterestType");
+            {
+                ErrorHandler.ThrowParseError(stringToParse, fieldName, "FrmFutureValue.InterestType");
                 interestType = FrmFutureValue.InterestType.None;
             }
             else 
@@ -127,7 +100,7 @@ namespace Week5FutureValue
                 }
                 else
                 {
-                    ShowParseError(stringToParse, fieldName, "FrmFutureValue.InterestType");
+                    ErrorHandler.ThrowParseError(stringToParse, fieldName, "FrmFutureValue.InterestType");
                 }
             }
             return parseSuccess;
